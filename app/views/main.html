@@ -16,7 +16,10 @@
             <div class="row dashboard-content">
                 <div class="col-md-3">{{deal.title}}</div>
                 <div class="col-md-2">{{deal.contractLength}}</div>
-                <div class="col-md-2">{{deal.speed.label}} {{deal.usage.label}}</div>
+                <div class="col-md-2">
+                    <div class="row speed-content">{{deal.speed.label}} MB</div>
+                    <div class="row speed-content">{{deal.usage.label}}</div>
+                </div>
                 <div class="col-md-1"><img ng-src='{{deal.offer.smallLogo}}'/></div>
                 <div class="col-md-1">
                     <div ng-hide="{{deal.popularChannels}}">
