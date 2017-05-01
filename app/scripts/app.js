@@ -7,17 +7,19 @@ angular.module('dtlApp', ['ngRoute'])
 				templateUrl : 'views/main.html',
 				controller  : 'mainController'
 			})
+			.when('/data', {
+				templateUrl : 'views/main.html',
+				controller  : 'dataController'
+			})
+			.when('/filter', {
+				templateUrl : 'views/main.html',
+				controller  : 'filterController'
+			})
 			.when('/home', {
 				templateUrl : 'views/main.html',
 				controller  : 'mainController'
 			});
 
-			$routeProvider.otherwise({ redirectTo: "/" });			
+			$routeProvider.otherwise({ redirectTo: "/data" });			
 	});
-
-	// create the controller and inject Angular's $scope
-	// dtlApp.controller('mainController', function($scope) {
-	// 	// create a message to display in our view
-	// 	$scope.message = 'Everyone come and see how good I look!';
-	// });
 })();
