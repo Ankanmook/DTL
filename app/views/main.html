@@ -39,7 +39,7 @@
                         <div class="row mobile-content">Connection: {{deal.mobile.connectionType.label}}</div>
                     </div>
                 </div>
-                <div class="col-md-1">{{deal.prices.totalContractCost}}</div>
+                <div class="col-md-1">{{deal.prices[0].totalContractCost | currency:"£"}}</div>
             </div>
         </div>
     </div>
