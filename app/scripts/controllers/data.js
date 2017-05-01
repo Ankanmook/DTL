@@ -5,9 +5,9 @@ angular.module('dtlApp')
 		// create a message to display in our view
 		console.log("access data");
 		$scope.message = 'Everyone come and see how good I look!';
-    $http.get('dtl_resource/deals.json').success(function(data) {
-        $scope.message = data;
-    });
+    // $http.get('dtl_resource/deals.json').success(function(data) {
+    //     $scope.message = data;
+    // });
 
 	}]);
 })();
