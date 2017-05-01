@@ -1,5 +1,3 @@
-<p>{{ message }}</p>
-
 <div class="panel" ng-show="true">
         <!--<div class="text-danger" ng-show="panel.jobs.errorMessage">{{panel.jobs.errorMessage}}</div>-->
         
@@ -14,7 +12,7 @@
         </div>
 
         <!--<wait-cursor display-when="isBusy"></wait-cursor>-->
-        <div ng-repeat="deal in response.deals">
+        <div ng-repeat="deal in deals">
             <div class="row dashboard-content">
                 <div class="col-md-3">{{deal.title}}</div>
                 <div class="col-md-2">{{deal.contractLength}}</div>
