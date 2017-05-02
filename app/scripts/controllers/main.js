@@ -19,6 +19,11 @@ angular.module('dtlApp')
 		$scope.busy = false;
 	});
 
+	$scope.filterDeals = function(deal){
+		return deal.productTypes.Contains($scope.Filter.TV) || 
+			deal.productTypes.Contains($scope.Filter.Phone) ||
+			deal.productTypes.Contains($scope.Filter.Broadband);
+		};
 
 
     }]);
