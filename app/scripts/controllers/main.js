@@ -32,7 +32,7 @@ angular.module('dtlApp')
 
 		return deal.productTypes.indexOf($scope.Filter.TV != -1)||
 		deal.productTypes.indexOf($scope.Filter.Phone != -1) ||
-			deal.productTypes.indexOf($scope.Filter.Phone != -1);
+			deal.productTypes.indexOf($scope.Filter.BroadBand != -1);
 		};
 
 
