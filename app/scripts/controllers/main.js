@@ -28,11 +28,11 @@ angular.module('dtlApp')
 
 		console.log(deal.productTypes.indexOf($scope.Filter.TV !== -1)||
 		deal.productTypes.indexOf($scope.Filter.Phone !== -1) ||
-			deal.productTypes.indexOf($scope.Filter.BroadBand !== -1));
+			deal.productTypes.indexOf($scope.Filter.Broadband !== -1));
 
 		return deal.productTypes.indexOf($scope.Filter.TV !== -1)||
 		deal.productTypes.indexOf($scope.Filter.Phone !== -1) ||
-			deal.productTypes.indexOf($scope.Filter.BroadBand !== -1);
+			deal.productTypes.indexOf($scope.Filter.Broadband !== -1);
 		};
 
 
