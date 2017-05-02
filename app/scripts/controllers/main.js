@@ -11,6 +11,9 @@ angular.module('dtlApp')
 	$http.get('../deals.json')
 	.then(function(response){
 		$scope.deals = response.data.deals;
+
+		console.log($scope.deals);
+		console.log($scope);
 	},function(err){
 		console.log(err);
 		$scope.error = err;
@@ -20,9 +23,16 @@ angular.module('dtlApp')
 	});
 
 	$scope.filterDeals = function(deal){
-		return deal.productTypes.Contains($scope.Filter.TV) || 
-			deal.productTypes.Contains($scope.Filter.Phone) ||
-			deal.productTypes.Contains($scope.Filter.Broadband);
+		console.log(deal.productTypes);
+		console.log($scope.Filter);
+
+		console.log(deal.productTypes.indexOf($scope.Filter.TV != -1)||
+		deal.productTypes.indexOf($scope.Filter.Phone != -1) ||
+			deal.productTypes.indexOf($scope.Filter.BroadBand != -1));
+
+		return deal.productTypes.indexOf($scope.Filter.TV != -1)||
+		deal.productTypes.indexOf($scope.Filter.Phone != -1) ||
+			deal.productTypes.indexOf($scope.Filter.Phone != -1);
 		};
 
 

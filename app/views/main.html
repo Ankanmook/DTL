@@ -35,7 +35,7 @@
             </div>
 
             <!--<wait-cursor display-when="isBusy"></wait-cursor>-->
-            <div ng-repeat="deal in deals">
+            <div ng-repeat="deal in deals | filter: filterDeals">
                 <div class="row dashboard-content">
                     <div class="col-md-3">{{deal.title}}</div>
                     <div class="col-md-1">  {{deal.contractLength}}</div>
