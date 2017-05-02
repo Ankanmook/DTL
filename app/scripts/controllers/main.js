@@ -20,5 +20,6 @@ angular.module('dtlApp')
 	});
 
 
+
     }]);
 })();
