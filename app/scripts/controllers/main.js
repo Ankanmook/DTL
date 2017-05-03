@@ -31,7 +31,7 @@ angular.module('dtlApp')
 		//console.log(deal.productTypes.indexOf($scope.Filter.Phone));
 		//console.log(deal.productTypes.indexOf($scope.Filter.Broadband));
 
-		if(deal.productTypes.indexOf($scope.Filter.TV) > -1)
+		if(deal.productTypes.indexOf($scope.Filter.Broadband) > -1)
 		{
 			return true;
 		}
