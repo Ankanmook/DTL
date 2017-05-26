@@ -10,7 +10,7 @@ angular.module('dtlApp')
 
 		$scope.Filter2 = {
 			productTypes:{TV: "TV", Broadband: "Broadband", Phone: "Phone" },
-			speed : {Any: "Any", MobileDate: "5GB", Fast: "52MB"}
+			speed : {Any: "Any", MobileDate: "5 GB", Fast: "52MB"}
 		}
 
 		// $scope.message = 'Everyone come and see how good I look!';
@@ -30,9 +30,12 @@ angular.module('dtlApp')
 
 		$scope.filterDeals = function(deal){
 
+		var dealFilter = { productTypes : deal.productTypes, speed : { Fast: deal.speed.label, MobileData: deal.mobile} };
 			//broadband only deals
 			//broadband and tv only deals
 			//broadband and mobile
+
+		console.log(dealFilter.speed.MobileData);
 
 			if(deal.productTypes.indexOf($scope.Filter.Broadband) > -1)
 			{
@@ -40,7 +43,11 @@ angular.module('dtlApp')
 			}
 			else if(deal.productTypes.indexOf($scope.Filter.Phone) > -1)
 			{
-				return true;
+				if(dealFilter.speed.MobileData)
+				{
+					return true;					
+				}
+				return false;
 			}
 			else if(deal.productTypes.indexOf($scope.Filter.TV) > -1)
 			{
