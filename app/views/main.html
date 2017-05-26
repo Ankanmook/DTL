@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col-md-2 jumbotron">
+        
+        <table>
+          <tr>
+            <th><input type="checkbox" ng-model="Filter.Broadband" ng-true-value="'Broadband'" data-ng-false-value=''/>Broadband</th>
+          </tr>
+          <tr>
+            <th><input type="checkbox" ng-model="Filter.TV" ng-true-value="'TV'" data-ng-false-value=''/>TV</th>
+          </tr>
+          <tr>
+            <th><input type="checkbox" ng-model="Filter.Phone" ng-true-value="'Phone'" data-ng-false-value=''/>Mobile</th>
+          </tr>
+          
+        </table>
+        Speed </br>
+        <select name="Speed">
+          <option value="Any">Any</option>
+          <option value="52MB">52MB</option>
+          <option value="Mobile Data">Mobile Data 5GB</option>
+        </select>
+
+    </div>
+    <div class="col-md-10">
+        
+            <!--<div class="text-danger" ng-show="panel.jobs.errorMessage">{{panel.jobs.errorMessage}}</div>-->
+            
+            <div class="row dashboard-content-header">
+                <div class="col-md-3"><h4>About</h4></div>
+                <div class="col-md-1"><h4>contract <br/>Length</h4></div>
+                <div class="col-md-2"><h4>speed/usage</h4></div>
+                <div class="col-md-1"><h4>Offer</h4></div>
+                <div class="col-md-2"><h4>TV</h4></div>           
+                <div class="col-md-2"><h4>Mobile</h4></div>
+                <div class="col-md-1"><h4>Cost</h4></div>
+            </div>
+
+            <!--<wait-cursor display-when="isBusy"></wait-cursor>-->
+            <div ng-repeat="deal in deals | filter: filterDeals">
+                <div class="row dashboard-content">
+                    <div class="col-md-3">{{deal.title}}</div>
+                    <div class="col-md-1">  {{deal.contractLength}}</div>
+                    <div class="col-md-2">
+                        <div class="row speed-content">{{deal.speed.label}} MB</div>
+                        <div class="row speed-content">{{deal.usage.label}}</div>
+                    </div>
+                    <div class="col-md-1"><img ng-src='{{deal.offer.smallLogo}}'/></div>
+                    <div class="col-md-2">
+                        <div ng-hide="{{deal.popularChannels}}">
+                            N/A
+                        </div>
+                        <div ng-show="{{deal.popularChannels}}">
+                        <div ng-repeat="channel in deal.popularChannels">
+                            <div class="row tv-content"><img ng-src='{{channel.logo}}'/> </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div ng-hide="{{deal.mobile}}">
+                            N/A
+                        </div>
+                        <div ng-show="{{deal.mobile}}">
+                            <div class="row mobile-content">Data: {{deal.mobile.data.label}}</div>
+                            <div class="row mobile-content">Minutes: {{deal.mobile.minutes.label}}</div>
+                            <div class="row mobile-content">Texts: {{deal.mobile.texts.label}}</div>
+                            <div class="row mobile-content">Connection: {{deal.mobile.connectionType.label}}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">{{deal.prices[0].totalContractCost | currency:"£"}}</div>
+                </div>
+            </div>       
+    </div>
+</div>
